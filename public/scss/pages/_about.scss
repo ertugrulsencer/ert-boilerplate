@@ -1,0 +1,16 @@
+main#about_page {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #585858;
+  p {
+    width: 85%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  a {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "ert-boilerplate",
+  "version": "0.0.1",
+  "description": "Ertugrul Boiler Plate",
+  "main": "server.js",
+  "repository": "https://github.com/ertugrulsencer/ert-boilerplate.git",
+  "author": "Ertuğrul Sencer UZUN",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.2.0"
+  },
+  "scripts": {
+    "serve": "nodemon server.js",
+    "start": "pm2 start server.js",
+    "sass": "sass public/scss/main.scss:public/css/style.css --watch"
+  }
+}
