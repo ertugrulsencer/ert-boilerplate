@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const mongoose = require("mongoose");
+const ErrorHandling = require("./src/middlewares/ErrorHandling");
 const router = require("./src/router");
 const app = express();
 
@@ -11,16 +12,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/public", express.static("public"));
 app.use(router);
+app.use(ErrorHandling);
 
 (async () => {
+  let mongo_connection = false;
   try {
-    await mongoose.connect(
-      "mongodb+srv://" +
-        process.env.DB_USER +
-        ":" +
-        process.env.DB_PASS +
-        "@" +
+    mongo_connection = await mongoose.connect(
+      "mongodb://" +
         process.env.DB_HOST +
+        ":" +
+        process.env.DB_PORT +
         "/" +
         process.env.DB_NAME,
       {
